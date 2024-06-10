@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+ <!-- Optional JavaScript; choose one of the two! -->
+
+ <!-- Option 1: Bootstrap Bundle with Popper -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+     crossorigin="anonymous"></script>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="./js/jqueryui/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="./js/jqueryui/jquery-ui.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <script src="Js/jqueryui/jquery-ui.min.js"></script>
+    <script src="Js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#lifeli").hide();
+          
+            $("#lifel").click(function(){
+                $("#lifeli").fadeToggle();
+
+
+            });
+            $("#call").hide()
+            /* calling function*/
+            $("#callingFrinds").click(function(){
+                $("#call").fadeToggle();
+                $(".audiance").hide();
+                $("#Ring")[0].play();
+
+            });
+            $("#end-call-btn").click(function(){
+                $("#call").hide()
+                $("#Ring")[0].muted = true;
+
+            });
+
+    /* audiance*/
+    $(".audiance").hide();
+    $("#audiance").click(function(){
+        $(".audiance").slideToggle();
+        $("#call").hide()
+
+
+    });
+
+
+
+        });
+    </script>
+    <style>
+        #startQuestion,
+        #qBox,
+        #restartQuiz {
+            max-width: 50%;
+           
+            margin-left: 25%;
+            margin: auto;
+            margin-top: 10%;
+
+        }
+
+        #restartquizbtn {
+            margin-left: 44%;
+        }
+       #tg
+       {
+        background-image: url("./images/background.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+       
+      
+       }
+       .clrr:hover
+       {
+        background-color: #ffc107;
+        color: black;
+       }
+
+       #lifel{
+      padding: 15px ;
+      text-decoration: none;
+      background-color: rgb(107, 0, 128);
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      border: 2px solid gold;
+      text-align: center;
+
+
+    }
+    #public{
+      background-color: rgb(107, 0, 128);
+      font-weight: bold;
+      border-radius: 50%;
+      text-align:center;
+      border: 2px solid gold;
+      margin-top: 10px;
+    
+      margin: 2px;
+      min-height: 20px;
+
+     
+    }
+    #A{
+        background-color: blueviolet;
+        color: white;
+        border: 2px solid gold;
+    }
+    #B{
+        background-color: blueviolet;
+        color: white;
+        border: 2px solid gold;
+    }
+    #C{
+        background-color: blueviolet;
+        color: white;
+        border: 2px solid gold;
+    }
+    #D{
+        background-color: blueviolet;
+        color: white;
+        border: 2px solid gold;
+    }
+    #startQuestion,
+        #qBox,
+        #restartQuiz {
+            max-width: 50%;
+            margin-top: 200px;
+            margin-left: 25%;
+        }
+
+        #restartquizbtn {
+            margin-left: 44%;
+        }
+
+        /* money  */
+        #scoreboard {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+}
+
+#money-list {
+    list-style: none;
+    padding: 0;
+}
+
+#money-list li {
+    margin: 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+#money-list .active {
+    color: green;
+    font-weight: bold;
+}
+
+     /* styles.css */
+#calling-overlay{
+    background-color:black;
+    color: black;
+   
+    align-items: center;
+}
+
+
+.calling-container {
+            background-color: #c42e2e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: center;
+        }
+
+        .phone-screen {
+            background-color: #3a3939;
+            color: #fff;
+            padding: 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            position: absolute;
+            top:150px;
+            left: 420px;
+        }
+       
+
+        .phone-screen p {
+            margin: 0;
+        }
+
+        .call-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .round-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .red-button {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+
+
+
+
+
+
+
+ 
+.skillset
+{
+    text-align: right;
+    color:#fff;
+    padding-right: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.A
+{
+    width: 95%;
+    background-color:green;
+    border: 2px solid green;
+    border-radius: 6px;
+}
+.B
+{
+    width: 65%;
+    background-color: yellow;
+    border: 2px solid yellow;
+    border-radius: 6px;
+}
+.C
+{
+    width: 39%;
+    background-color: red;
+    border: 2px solid red;
+    border-radius: 6px;
+}
+.D
+{
+    width: 16%;
+    background-color:gold;
+    border: 2px solid  gold;
+    border-radius: 6px;
+}
+p
+{
+    margin-bottom: 2px;
+    font-size: 22px;
+    font-weight: bold;
+}
+/*#scord bord*/
+
+#scoreboard{
+     position: absolute;
+            top:60px;
+            left: 75%;
+            width: 20%;
+            
+
+} 
+#scoreboard li{
+    color: black;
+    border: 2px solid gold;
+    background-color: rgb(176, 160, 190);
+   
+    
+}
+
+       
+ 
+    </style>
+</head>
+
+<body>
+
+   <!--slider section-->
+   <div class="container-fluid">
+
+  
+        <div class="row bg-primary" style="text-align: center;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-2">
+                <button class="btn " id="lifel" type="button" style="text-align: center;">Life Line</button>
+
+            </div>
+
+
+            <div class="row bg-primary" id="lifeli">
+                <div class="col-sm-3"></div>
+              <div class="col-sm-2" id="public">
+            <h1 id="calling"> <div class="col"><input type="button" name=""  id="lifeline"
+                class="btn   d-block m-auto " value="50-50" style="color: white; font-weight: bold; font-size: 40px;"></div>
+      </h1>
+              </div>
+              <div class="col-sm-2" id="public">
+                <h1 style="font-size: 60px; color: white;" id="audiance"><i class="fa-solid fa-users-line"></i></h1>
+              </div>
+              
+              <div class="col-sm-2" id="public">
+                <h1 style="font-size: 60px; color: white;" id="callingFrinds"><i class="fa-solid fa-phone"></i></h1>
+              </div>
+              
+              
+              
+              
+            </div>
+            
+           
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2"></div>
+          
+        </div>
+         <!--audiance -->
+  <div class="audiance">
+    <h1 style="text-align: center;"> Audience Poll...</h1>
+    <div class="row">
+        <div class="col-sm-3"></div>
+       
+        <div class="col-sm-6">
+            <p>A</p>
+<div class="container">
+    <div class="A skillset">95%</div>
+</div>
+
+<p>B</p>
+<div class="container">
+    <div class="B skillset">60%</div>
+</div>
+
+<p>C</p>
+<div class="container">
+    <div class="C skillset">39%</div>
+</div>
+
+<p>D</p>
+<div class="container">
+    <div class="D skillset">16%</div>
+</div>
+
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+
+       
+   
+    <!-- Start KBC QUESTIONS-------------------------------------------------------- -->
+    <div class="row pb-5" id="tg">
+    <div id="startQuestion" class="p-5" style="background-color: white; border-radius: 6px ; box-shadow: 4px 4px 4px black,-4px -4px 4px black;">
+        <h1 class="text-center " style="font-weight: bold; color: blueviolet;">KOUN BANEGA CAROREPATI</h1>
+        <hr class="mb-5">
+        <input type="text" id="playerName" placeholder="Enter Your Name" class="form-control w-50 m-auto" style="border: 2px solid gold;">
+        <input type="button" value="Start Game" class="btn  mt-3 m-auto d-block " id="startqbtn" style="background-color: blueviolet; color: white;">
+    </div>
+    <!-- QUESTIONS box ---------------------------------------------------------------------->
+    <div id="qBox" class="bg-pink p-5  shadow">
+        <div class="row text-warning">
+            <div class="col">
+                <h4 id="changeplayername">Player</h4>
+            </div>
+            <div class="col">
+                <h4 id="time" class="text-center">00:00</h4>
+                <button id="startTimer" class="btn btn-primary mt-3 d-block m-auto">Start Timer</button>
+            </div>
+            <div class="col">
+                <h4 id="points" class="float-end">points:0</h4>
+            </div>
+        </div>
+        <!-- Question making  -------------------------------------------------------->
+        <hr>
+        <div class="row text-warning">
+            <div class="col" style="background-color: blueviolet; border: 2px solid gold; border-radius: 6px; color: white;">
+                <h5 id="Question"></h5>
+            </div>
+        </div>
+        <div class="row row-cols-2 ">
+            <div class="col">
+                <input type="button" name="" id="A" value="a" class="opt btn  w-100 mt-4">
+            </div>
+            <div class="col">
+                <input type="button" name="" id="B" value="b" class="opt btn  w-100 mt-4">
+            </div>
+            <div class="col">
+                <input type="button" name="" id="C" value="c" class="opt btn  w-100 mt-4">
+            </div>
+            <div class="col">
+                <input type="button" name="" id="D" value="d" class="opt btn  w-100 mt-4">
+            </div>
+        </div>
+        <hr class="mt-">
+        <div class="col text-warning" id="questionNo">
+            <h4>Question No:1/3</h4>
+        </div>
+        <div class="col"><input type="button" name="" value="Next" id="nextquestion"
+            class="btn btn-outline btn-primary w-50 float-end"></div>
+       
+        
+        
+        
+    </div>
+    <!-- Restart quiz -->
+    <div id="restartQuiz" class="bg-pink p-5  shadow">
+        <h3 id="finalPoints" class="text-center text-warning">Final Points :0</h3>
+        <input type="button" id="restartquizbtn" value="Play Again" class="btn btn-primary mt-3">
+    </div>
+</div>
+    <!-- audio  -->
+    
+    <audio id="Ring" src="C:\Users\HP\OneDrive\Desktop\Kon banega k\Kon banega k\music\Bright Ring Ring.mp3"></audio>
+    <audio id="correct-audio" src="./music/right.mpeg"></audio>
+    <audio id="wrong-audio" src="./music/wrong.mpeg"></audio>
+    <audio id="clap" src="./music/clap.mpeg"></audio>
+    <audio id="onloadpage" src="./music/intro3.mpeg"></audio>
+    <audio id="forquestion" src="./music/question.mpeg"></audio>
+    <audio id="time1" src="./music/timer1.mp3" ></audio>
+
+
+
+
+
+
+    
+<!--foooter-->
+<div class="row" style="background-color: rgb(28, 8, 49); height: 40px;">
+      
+     
+</div>
+<!--slider End-->
+ <!--calling box Strat-->
+            
+          
+ <div class="phone-screen" style="height: 500px; width: 500px; margin: auto; margin-top: 20px;" id="call">
+                           
+    <h1 style="text-align: center; font-size: 150px; margin-top: 20px;"><i class="fa-solid fa-user"></i></h1>
+
+    <p style="text-align: center; font-size: 30px;">friend</p>
+    <p style="text-align: center;">Calling...</p>
+    <div class="call-controls" style="margin-top: 50px;">
+       
+
+        <div class="round-button " style="font-size: 20px;"><i class="fa-solid fa-volume-high"></i></div>
+        <div class="round-button red-button" id="end-call-btn"><i class="fa-solid fa-phone"></i></div>
+        <div class="round-button " style="font-size: 20px;"><i class="fa-solid fa-microphone"></i></div>
+       
+    </div>
+</div>
+  <!--calling box End-->
+ 
+<!--footer-->
+
+<div class="row">
+<div class="col-sm-12 p-0 px-0 bg-primary text-white">
+ <div class="row text-center text-md-left">
+   <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+     <h5 class="text-uppercase mb-4 fw-bold text-warning">K B C</h5>
+     <p>KBC premiered on 3 July 2000 and was hosted by Amitabh Bachchan, his first appearance on Indian television. KBC initially offered contestants the chance to win Rs. 1 crore.</p>
+   </div>
+   <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+     <h5 class="text-uppercase mb-4 fw-bold text-warning">Useful Links</h5>
+     <p><a href="about Us.html" class="text-white" style="text-decoration: none;">About</a></p>
+     <p><a href="#" class="text-white" style="text-decoration: none;">Contact</a></p>
+
+   
+
+   </div>
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+     <h5 class="text-uppercase mb-4 fw-bold text-warning">Support</h5>
+     <p><a href="#" class="text-white" style="text-decoration: none;">Our Team</p>
+     <p><a href="#" class="text-white" style="text-decoration: none;">Pages</a></p>
+     <p><a href="#" class="text-white" style="text-decoration: none;">Help</a></p>
+
+   </div>
+   <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+     <h5 class="text-uppercase mb-4 fw-bold text-warning">Contact</h5>
+     <p><i class="fas fa-home mr-3"></i>  Uttar Pradesh</p>
+     <p><i class="fas fa-envelope-circle-check mr-3"></i> kbc@gmail.com</p>
+     <p><i class="fas fa-phone mr-3"></i> 91-7518658824</p>
+     <p><i class="fas fa-print mr-3"></i>+91 933 125 4580</p>
+
+
+
+
+
+   </div>
+ </div>
+ <hr class="mb-4">
+ <div class="row align-items-center">
+   <div class="col-md-7 col-lg-8">
+     <p>Copyright &copy;2023 All rights reserved by: <b>The Mind Installer's of KSS</b></p>
+
+   </div>
+   <div class="col-md-5 col-lg-4">
+     <div class="text-center text-md-right">
+       <ul class="list-unstyled list-inline">
+         <li class="list-inline-item">
+             <a href="https://www.facebook.com/kbcsony/" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-facebook"></i></a>
+         </li>
+         <li class="list-inline-item">
+           <a href="https://www.youtube.com/channel/UC2BKodozho6piEdcSrb78jQ" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-youtube"></i></a>
+       </li>
+       <li class="list-inline-item">
+         <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-twitter"></i></a>
+     </li>
+     <li class="list-inline-item">
+       <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-instagram"></i></a>
+   </li>
+   <li class="list-inline-item">
+     <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-whatsapp"></i></a>
+ </li>
+
+       </ul>
+     </div>
+
+   </div>
+ </div>
+
+</div>
+</div>
+
+ 
+   </div>
+   
+    <!-- <audio id="intro" type="audio/mpeg" src="./intro3.mpeg" loop></audio> -->
+
+    <div id="scoreboard" class="bg-light p-3">
+        <h3>Money Won</h3>
+        <ol id="money-list">
+            <li>₹ 0</li>
+            <li>₹ 1,000</li>
+            <li>₹ 2,000</li>
+            <li>₹ 5,000</li>
+            <li>₹ 10,000</li>
+            <li>₹ 20,000</li>
+            <li>₹ 40,000</li>
+            <li>₹ 80,000</li>
+            <li>₹ 1,60,000</li>
+            <li>₹ 3,20,000</li>
+            <li>₹ 6,40,000</li>
+            <li>₹ 12,50,000</li>
+            <li>₹ 25,00,000</li>
+            <li>₹ 50,00,000</li>
+            <li>₹ 1 Crore</li>
+            <li>₹ 7 Crore</li>
+
+
+
+
+           
+        </ol>
+    </div>
+    
+
+
+    <script>
+
+
+
+        // Define an array to store money values
+        var moneyValues = ["₹ 0", "₹ 1,000", "₹ 2,000", "₹ 5,000", "₹ 10,000", "₹ 20,000", "₹ 40,000", "₹ 80,000", "₹ 1,60,000", "₹ 3,20,000", "₹ 6,40,000", "₹ 12,50,000", "₹ 25,00,000", "₹ 50,00,000", "₹ 1 Crore", "₹ 7 Crore"];
+     
+// Update the scoreboard with the current money won
+function updateScoreboard() {
+    var moneyList = document.getElementById("money-list");
+    for (var i = 0; i < moneyValues.length; i++) {
+        var listItem = moneyList.getElementsByTagName("li")[i];
+        if (i === points) {
+            listItem.classList.add("active");
+            
+             // Highlight the current money amount
+        } else {
+            listItem.classList.remove("active");
+        }
+        listItem.textContent = moneyValues[i];
+    }
+}
+
+
+
+
+        //    Questions--------------------------------------------------------------------------
+        //object
+        var Question = [
+            {
+                Q: "What is the purpose of the strcat function in C?",
+                A: "To compare two strings",
+                B: "To find the length of a string ",
+                C: "To concatenate two strings ",
+                D: "To copy one string to another",
+                ans: "C",
+                opt1: "A",
+                opt2: "B",
+
+            },
+            {
+                Q: "What is the result of the expression 5 / 0 in C?",
+                A: "0",
+                B: "5",
+                C: "Compiler error ",
+                D: "Runtime error",
+                ans: "D",
+                opt1: "A",
+                opt2: "C",
+
+            },
+            {
+                Q: "What is the result of the expression 2 + '2' in JavaScript?",
+                A: "4",
+                B: "'22'",
+                C: "22",
+                D: "'4'",
+                ans: "B",
+                opt1: "A",
+                opt2: "D",
+            },
+            {
+                Q: "Which loop in JavaScript is used for iterating over the properties of an object?",
+                A: " for loop ",
+                B: " while loop ",
+                C: "for...of loop ",
+                D: "for...in loop ",
+                ans: "D",
+                opt1: "A",
+                opt2: "C",
+            },
+            {
+                Q: "What is the purpose of the $(document).ready() function in jQuery?",
+                A: ") It waits for all images to be loaded",
+                B: "It ensures that the DOM is fully loaded before executing jQuery code. ",
+                C: ") It triggers a document reload event. ",
+                D: "It initializes a new HTML document.",
+                ans: "B",
+                opt1: "A",
+                opt2: "C",
+            },
+            {
+                Q: "What is the purpose of the SQL JOIN clause?",
+                A: "To create a new table ",
+                B: "To modify existing data ",
+                C: "To retrieve data from multiple related tables ",
+                D: "To delete records from a table",
+                ans: "C",
+                opt1: "A",
+                opt2: "D",
+            },
+            {
+                Q: "What does ACID stand for in the context of database transactions?",
+                A: "Atomicity,Consistency,Isolation,Durability",
+                B: "Accuracy,Control,Isolation,Data ",
+                C: "Association,Configuration,Integration,Documentation",
+                D: "Authorization,Certification,Investigation,Deployment",
+                ans: "A",
+                opt1: "C",
+                opt2: "B",
+            },
+            {
+                Q: "Which version of Bootstrap introduced the mobile-first approach?",
+                A: "Bootstrap",
+                B: "Bootstrap 3",
+                C: "Bootstrap 4",
+                D: "Bootstrap 5",
+                ans: "C",
+                opt1: "A",
+                opt2: "D",
+            },
+            {
+                Q: "Which PL/SQL construct is used for conditional execution?",
+                A: " LOOP  ",
+                B: "  CASE ",
+                C: " RECORD ",
+                D: " FUNCTION",
+                ans: "B",
+                opt1: "A",
+                opt2: "C",
+            },
+            {
+                Q: "What is the PL/SQL block structure?",
+                A: " BEGIN-THEN-END ",
+                B: "BEGIN-DO-END ",
+                C: "BEGIN-DECLARE-END ",
+                D: "DECLARE-BEGIN-END",
+                ans: "D",
+                opt1: "A",
+                opt2: "B",
+            },
+            {
+                Q: "How do you create a new HTML element using jQuery?",
+                A: "createElement()",
+                B: "appendElement() ",
+                C: " create() ",
+                D: "$(<element>)",
+                ans: "D",
+                opt1: "A",
+                opt2: "B",
+            },
+            {
+                Q: "What is the purpose of the PL/SQL function SQL%ROWCOUNT?",
+                A: "To retrieve the total number of rows in a table ",
+                B: "To fetch data from the database ",
+                C: "To retrieve the number of rows affected by the last SQL statement ",
+                D: " To return the current system date and time",
+                ans: "C",
+                opt1: "A",
+                opt2: "B",
+            },
+            {
+                Q: "What is the purpose of the $() function in jQuery?",
+                A: "To declare variables ",
+                B: "To create HTML elements ",
+                C: "To select and manipulate DOM elements",
+                D: "To define CSS styles",
+                ans: "C",
+                opt1: "A",
+                opt2: "D",
+            },
+            {
+                Q: "What is the purpose of the Bootstrap grid system?",
+                A: " To create responsive layouts for web pages ",
+                B: "To manage server-side data ",
+                C: "To style text and fonts",
+                D: "To handle server-side requests",
+                ans: "A",
+                opt1: "C",
+                opt2: "B",
+            },
+        ];
+        //------------------hide boxes-------------------------------------------------------------------
+        $("#qBox").hide();
+        $("#restartQuiz").hide();
+        $("#nextquestion").hide();
+        $("#scoreboard").hide();
+        //-----------------------Variables----------------------------------------------------------------------
+        var pname = " ";
+        var count = 0;
+        var cid = " ";
+        var points = 0;
+        var len = Question.length;
+        // ------------------------ show again------------------------------------------------------------------
+        $("#startqbtn").click(function () {
+            pname = $("#playerName").val();
+            $("#qBox").show();
+            $("#startQuestion").hide();
+            if (pname != "") {
+                $("#changeplayername").text(pname);
+            }
+            loadquestion();
+            forquestion();
+            $("#scoreboard").show();
+        });
+        //load question function------------------------------------------------------------------------------
+        function loadquestion() {
+            $("#Question").text(Question[count].Q);
+            $("#A").val(Question[count].A);
+            $("#B").val(Question[count].B);
+            $("#C").val(Question[count].C);
+            $("#D").val(Question[count].D);
+            $("#questionNo").text(`Question No:${count + 1}/${len}`);
+        }
+        // validation=============================================================================================
+        $(".opt").click(function () {
+            cid = $(this).attr("id");
+            if (cid == Question[count].ans) {
+                forclapping();//play the clapping
+                // playCorrectAudio(); // Play the correct answer audio
+                $(this).css("background", "green");
+                points++;
+                $("#points").text("Points :" + points);
+                updateScoreboard();
+        
+                
+
+                $("#nextquestion").show();
+                $(".opt").prop("disabled", "true");
+                clearInterval(timer); // Stop the timer
+                stopTimerAudio();
+
+               
+            }
+            else {
+                $(this).css("background", "red");
+                $("#" + Question[count].ans).css("background", "green").fadeOut().fadeIn();
+                $(".opt").prop("disabled", "true");
+                playWrongAudio(); // Play the wrong answer audio
+                salert();
+                $("#qBox").hide(); 
+                $("#restartQuiz").show();
+                clearInterval(timer); // Stop the timer
+               
+            }
+           
+            
+        });
+        //next button=======================================================================================
+        $("#nextquestion").click(function () {
+            count++;
+            $(".opt").css("background", "");
+            $(".opt").prop("disabled", "");
+            if (count >= len) {
+                $("#qBox").hide();
+                $("#restartQuiz").show();
+                $("#finalPoints").text(" Final Points :" + points)
+            }
+            else {
+                loadquestion();
+                forquestion();
+            }
+        });
+        // restart button=======================================================================
+        $("#restartquizbtn").click(function () {
+            timerFlag = false; // Reset the timerFlag to false
+            $("#qBox").show();
+            resetQuiz();
+            $("#restartQuiz").hide();
+            $("#lifeline").prop("disabled", "");
+            $(".opt").css("background", "");
+            $(".opt").prop("disabled", "");
+            loadquestion();
+            forquestion();
+            $("#swaplifeline").prop("disabled", "");
+            $("#time").text("00:00");
+            clearInterval(timer); // Stop the timer
+            });
+        //reset question======================================================================================
+        function resetQuiz() {
+            count = 0;
+            points = 0;
+           
+            $("#points").text("Points :" + points);
+            $("#questionNo").text(`Question No:${count + 1}/${len}`);
+        }
+        // //===========================================lifeline 50-50==================================================
+        $("#lifeline").click(function () {
+            $("#" + Question[count].opt1).val("");
+            $("#" + Question[count].opt2).val("");
+            $("#" + Question[count].opt1).prop("disabled", "true");
+            $("#" + Question[count].opt2).prop("disabled", "true");
+            $("#lifeline").prop("disabled", "true");
+
+        });
+
+        //======================================================================music====================
+         // window.addEventListener('click', () => {
+        //     document.getElementById("intro").play();
+        // });
+
+        // Play audio for correct answer
+        function playCorrectAudio() {
+            var correctAudio = document.getElementById("correct-audio");
+            
+            stopAllAudio(); // Stop all other audio elements
+            correctAudio.play();
+        }
+
+        // Play audio for wrong answer
+        function playWrongAudio() {
+            var wrongAudio = document.getElementById("wrong-audio");
+            stopAllAudio(); // Stop all other audio elements
+            wrongAudio.play();
+        }
+        // Play audio for clapping
+        function forclapping() {
+            var clapping = document.getElementById("clap");
+             stopAllAudio(); // Stop all other audio elements
+            clapping.play();
+        }
+        // Play audio for onload
+        function forloading() {
+            var loading = document.getElementById("onloadpage");
+            stopAllAudio(); // Stop all other audio elements
+            loading.play();
+        }
+        // Play audio for question coming
+        function forquestion() {
+            var que = document.getElementById("forquestion");
+            stopAllAudio(); // Stop all other audio elements
+            que.play();
+        }
+        function timermusic() {
+            var time = document.getElementById("timeraudio");
+            stopAllAudio(); // Stop all other audio elements
+            time.play();
+        }
+        // Function to stop all audio elements
+function stopAllAudio() {
+    var audioElements = document.getElementsByTagName("audio");
+    for (var i = 0; i < audioElements.length; i++) {
+        var audio = audioElements[i];
+        if (!audio.paused) {
+            audio.pause();
+        }
+    }
+}
+
+        
+
+    // Function to stop the timer music
+    function stopTimerAudio() {
+        var timerAudio = document.getElementById("timeraudio");
+        timerAudio.pause();
+        timerAudio.currentTime = 0;
+    }
+
+
+       // ======================================TIMER===========================================================
+
+        // Add these timer
+        var timer; // Variable to store the timer countdown
+        var timerFlag = false; // Flag to indicate if the timer is running
+        var timeLimit = 30; // Set the time limit (in seconds) per question
+        // Add a function to start the timer
+        function startTimer() {
+            var timerElement = document.getElementById("time");
+            var remainingTime = timeLimit;
+            function countdown() {
+                if (remainingTime <= 0) {
+                    clearInterval(timer); // Stop the timer
+                    $("#nextquestion").click(); // Automatically click "Next" when time is up
+                } else {
+                    var minutes = Math.floor(remainingTime / 60);
+                    var seconds = remainingTime % 60;
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+                    timerElement.textContent = minutes + ":" + seconds;
+                    remainingTime--;
+                }
+            }
+            // Start the countdown
+            countdown(); // Initial display
+         
+            timer = setInterval(countdown, 1000); // Update every second
+        }
+        // Add a click event for the "Start Timer" button
+        $("#startTimer").click(function () {
+            if (!timerFlag) {
+                startTimer();
+              timerFlag = true;
+              timermusic();
+            }
+ });
+        // Modify the "Next" button click event to stop the timer and hide the "Next" button
+        $("#nextquestion").click(function () {
+            $("#time").text("00:00");
+            clearInterval(timer); // Stop the timer
+            timerFlag = false;
+ });
+ 
+//      //  ========================================swapping lifeleine================================================
+     
+// // Initialize an array to keep track of which questions have been asked
+// var askedQuestions = [];
+// var availableQuestions = [...Array(Question.length).keys()]; // Initialize with all question indices
+
+// // Function to reset the game
+// function resetGame() {
+//     askedQuestions = [];
+//     count = 0;
+//     points = 0;
+//     $("#points").text("Points: " + points);
+//     $("#questionNo").text(`Question No: 1/${len}`);
+// }
+
+// // Function to get a random question index that hasn't been asked yet
+// function getRandomUnaskedQuestionIndex() {
+//     if (availableQuestions.length === 0) {
+//         return -1; // No unasked questions left
+//     }
+//     var unaskedQuestions = availableQuestions.filter(function (index) {
+//         return !askedQuestions.includes(index);
+//     });
+
+//     if (unaskedQuestions.length === 0) {
+//         return -1; // No unasked questions left
+//     }
+
+//     var randomIndex = Math.floor(Math.random() * unaskedQuestions.length);
+//     var questionIndex = unaskedQuestions[randomIndex];
+//     availableQuestions.splice(randomIndex, 1); // Remove the chosen question index from availableQuestions
+//     return questionIndex;
+// }
+
+// // Function to handle swapping the lifeline
+// $("#swaplifeline").click(function () {
+//     var newQuestionIndex = getRandomUnaskedQuestionIndex();
+
+//     if (newQuestionIndex !== -1) {
+//         askedQuestions.push(count); // Add the current question index to the askedQuestions array
+//         count = newQuestionIndex;
+//         // loadquestion();
+//         forquestion();
+//         $("#swaplifeline").prop("disabled", true);
+//     }
+// });
+
+// // Function to handle the "Next" button
+// $("#nextquestion").click(function () {
+//     var newQuestionIndex = getRandomUnaskedQuestionIndex();
+
+//     if (newQuestionIndex !== -1) {
+//         askedQuestions.push(count); // Add the current question index to the askedQuestions array
+//         count = newQuestionIndex;
+//         loadquestion();
+//         forquestion();
+//         $("#nextquestion").hide(); // Hide the "Next" button
+//         $("#swaplifeline").prop("disabled","");
+//     } else {
+//         // All questions have been asked
+//         $("#qBox").hide();
+//         $("#restartQuiz").show();
+//         $("#finalPoints").text("Final Points: " + points);
+//     }
+// });
+
+
+
+
+
+function salert(){
+swal("OH! Sorry Dear ", "You clicked the button!", "error", {
+  button: "Play Again!",
+});
+};
+
+ </script>
+
+</body>
+
+</html>

@@ -1,0 +1,323 @@
+<html>
+    <head>
+        <script src="Js/jquery-3.7.1.min.js"></script>
+        <script src="Js/jqueryui/jquery-ui.min.css"></script>
+        <script src="Js/jqueryui/jquery-ui.min.js"></script>
+        <style>
+            .err{
+                color: red;
+            }
+            
+        div.main{
+	width:700px;
+	margin:35px auto 0px auto;
+}
+div.register{
+	background-color:rgba(0,0,0,0.3);
+	width:100%;
+	font-size:18px;
+	border-radius:10px;
+	border:1px soid rgba(255,255,255,0.3);
+	box-shadow:2px 2px 15px
+	rgba(0,0,0,0.3);
+	color:#fff;
+}
+h2{
+	text-align:center;
+	padding:10px;
+	font-family:sans-serif;
+	color:black;
+}
+form#register{
+	margin:33px;
+}
+label{
+	font-family:sans-serif;
+	font-size:18px;
+}
+input#tname{
+	width:630px;
+	border:1px solid #ddd;
+	border-radius:3px;
+	outline:0;
+	padding:7px;
+	background-color:#fff;
+	box-shadow:inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+input#temail{
+	width:630px;
+	border:1px solid #ddd;
+	border-radius:3px;
+	outline:0;
+	padding:7px;
+	background-color:#fff;
+	box-shadow:inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+input#mob{
+	width:630px;
+	border:1px solid #ddd;
+	border-radius:3px;
+	outline:0;
+	padding:7px;
+	background-color:#fff;
+	box-shadow:inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+input#date{
+	width:630px;
+	border:1px solid #ddd;
+	border-radius:3px;
+	outline:0;
+	padding:7px;
+	background-color:#fff;
+	box-shadow:inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+
+select#ddlcity{
+	width:630px;
+	border:1px solid #ddd;
+	border-radius:3px;
+	outline:0;
+	padding:7px;
+	background-color:#fff;
+	box-shadow:inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+textarea#taddress{
+	width:630px;
+	border:1px solid #ddd;
+	border-radius:3px;
+	outline:0;
+	padding:7px;
+	background-color:#fff;
+	box-shadow:inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+input#btnsave{
+	width:400px;
+	padding:7px;
+	font-size:16px;
+	font-family:sans-serif;
+	font-weight:600;
+	border-radius:3px;
+	background-color:#448BD3;
+	color:white;
+	cursor:pointer;
+	border:1px solid
+	rgba(0,0,0);
+	box-shadow:1px 1px 5px
+	rgba(0,0,0,0.3);
+	margin-bottom:20px;
+}
+input#tpass{
+    width:630px;
+	border:1px solid #ddd;
+	border-radius:3px;
+	outline:0;
+	padding:7px;
+	background-color:#fff;
+	box-shadow:inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+input#tcpass{
+    width:630px;
+	border:1px solid #ddd;
+	border-radius:3px;
+	outline:0;
+	padding:7px;
+	background-color:#fff;
+	box-shadow:inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+
+label,span,h2{
+	text-shadow:1px 1px 5pxrgba(0,0,0,0.3);
+}
+.form-control:focus{
+    box-shadow: none;
+    border: 1px solid black;
+}
+
+        </style>
+        <script>
+         $(document).ready(function(){
+           
+        $("#btnsave").click(function(){
+         var status=true;
+         var name,email,city,address,mobile,pass,cpass,dob;
+         //To read values of all form controls
+		name=$("#tname").val().trim();
+ 		email=$("#temail").val().trim();
+        dob=$("#date").val().trim();
+        city=$("#ddlcity").val().trim();
+		mobile=$("#mob").val().trim();
+		 address=$("#taddress").val().trim();
+       
+         pass=$("#tpass").val().trim();
+         cpass=$("#tcpass").val().trim();
+           $(".err").remove();//clear all error msg
+            //DOB
+            $("#date").datepicker({
+                    changeMonth:true,
+                    changeYear:true
+                    
+                    
+                  });
+            
+                    
+               
+           
+        
+                
+           //validate name
+		 if(name.length==0)
+		 {
+	   $("#tname").after("<span class='err'>Please enter your name.</span>");
+		status=false;
+		 }
+		 else if(name.length<3)
+		{
+	 $("#tname").after("<span class='err'>Please enter your valid name.</span>");
+		 status=false;
+		 }
+        //validate Email
+		 if(email.length==0)
+		 {
+	   $("#temail").after("<span class='err'>Please enter your name.</span>");
+		status=false;
+		 }
+
+           //Validate Mobile Number...
+         var regex=/^(0|91)?[6-9][0-9]{9}$/;
+                   if(mobile.length==0)
+                   {
+                    $("#mob").after("<span class='err'>Please Enter mobile number</span>");
+                    status=false;
+                   }
+                   else if(regex.test(mobile)==false)
+                   {
+                    $("#mob").after("<span class='err'>Invalid mobile number.</span>");
+                    status=false;
+                   }
+                   //validate DOB
+                   if(dob.length==0)
+                   {
+                    $("#date").after("<span class='err'>Please enter your dob.</span>");
+                    status=false;
+                   }
+                  
+                   
+                    //select city
+                    if(city.length==0)
+                   {
+                    $("#ddlcity").after("<span class='err'>Please Select a City</span>");
+                    status=false;
+                   }
+
+
+
+                   //Validate  Address
+                   if(address.length==0)
+                   {
+                    $("#taddress").after("<span class='err'>Please enter your  address.</span>");
+                    status=false;
+                   }
+                   else
+                   {
+                    var count=1;
+                    for(x=0;x<address.length;x++)
+                    {
+                        ch=address.charAt(x);
+                        if(ch==' '||ch==','||ch=='.'||ch=='?'||ch=='!')
+                            count++;
+                    }
+                        if(count<3)
+                        {
+                        $("#taddress").after("<span class='err'>Please enter your complete permanent address.</span>");
+                        status=false;   
+                        }
+                   }
+                  
+                   //Validate password
+                   if(pass.length==0)
+                   {
+                    $("#tpass").after("<span class='err'>Please Enter password.</span>");
+                    status=false;
+                   }
+                   else if(pass.length<6)
+                   {
+                    $("#tpass").after("<span class='err'>Minimum 6 Characters are required in password.</span>");
+                    status=false;
+                   }
+                   //Validate Confirm password
+                   if(cpass.length==0)
+                   {
+                    $("#tcpass").after("<span class='err'>Please re-enter your password.</span>");
+                    status=false;
+                   }
+                   else if(pass!=cpass)
+                   {
+                    $("#tcpass").after("<span class='err'>password and confirm password must be same.</span>");
+                    status=false;
+                   }  
+
+
+         return status;
+        });
+         });
+        </script>
+       
+    </head>
+    <body>
+        <div class="main">
+            <div class="register">
+            <h2>Registration Form</h2>
+            <br>
+            <form id="register" action="save.aspx" method="post">
+                <label>Full Name</label>
+            
+              <input type="name" name="name"id="tname" placeholder="Enter your Name"/>
+               <br><br>
+               <label>Email:</label>
+            <br>
+           <input type="email" name="email" id="temail" placeholder="Email Id">
+           <br><br>
+           <label>Phone Number:</label>
+             <br>
+               <input type="number" name="mobile"id="mob" placeholder="Phone Number">
+            <br><br>
+                <label>Date of Birth:</label> 
+                <input type="text" id="date" placeholder="Enter your DOB"/>
+                <br><br>
+                <label>Select City:</label>
+                <br>
+                
+                <select id="ddlcity">
+                    <option value="">Select City</option>
+                    <option>Varanasi</option>
+                    <option>Satna</option>
+                    <option>Hardoi</option>
+                    <option>Unnao</option>
+                    <option>Sultanpur</option>
+                   </select>
+                   <br><br>
+                   <label>Address:</label>
+                   <textarea class="form-control" rows="5" id="taddress" name="message" placeholder="Additional Message"></textarea>
+                   <br><br>
+                   <label>Password</label>
+           <input type="password" id="tpass" placeholder="Password"/><br>
+           <br>
+           <label>Confirm Password</label>
+           <input type="password" id="tcpass" placeholder="Confirm Password"/>
+                   <br><br>
+                   <center>
+                    <input type="submit" value="Registration Now" name="submit" id="btnsave">
+                    </center>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
